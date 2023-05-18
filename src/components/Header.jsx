@@ -33,11 +33,9 @@ const Header = () => {
                         </div>
 
                         <Link>
-                        <img src="../../logo.png" alt="" />
+                        <img  to="/" src="https://i.postimg.cc/J7bCxfw3/nextgen.png"   className='w-40 '/>
                         </Link>
-                        <Link to="/"> <span className='normal-case text-2xl font-bold'>Next</span>
-                            <span className='normal-case text-2xl font-bold text-[#EB455F] '>Gen</span></Link>
-
+                     
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className=" menu-horizontal">

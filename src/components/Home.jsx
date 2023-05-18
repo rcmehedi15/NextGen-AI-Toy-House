@@ -4,6 +4,9 @@ import ChefSection from './Chef/ChefSection';
 
 import Testimonial from './Testimonial/Testimonial';
 import Banner from './Banner';
+import Contact from './Contact/Contact';
+import Why from './Why/Why';
+import Faq from './Faq/Faq';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -29,8 +32,12 @@ const Home = () => {
                 </div>
 
                 <section>
+                    <Why></Why>
                     <Testimonial></Testimonial>
+                    <Contact></Contact>
+                    <Faq></Faq>
                 </section>
+
             </section>
         </>
     );

@@ -1,0 +1,11 @@
+.shape {
+    display: inline-block;
+    --tw-skew-x: -12deg;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-bg-opacity: 1;
+    background-color:#EB455F;
+    padding: 10px 20px;
+    --tw-text-opacity: 1;
+    color: rgb(247 250 252 / var(--tw-text-opacity));
+    margin-bottom: 20px;
+}

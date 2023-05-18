@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom'
 import ChefSection from './Chef/ChefSection';
-import HeroArea from './HeroArea';
-import Testimonial from './Register/Testimonial/Testimonial';
+
+import Testimonial from './Testimonial/Testimonial';
+import Banner from './Banner';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -10,7 +11,7 @@ const Home = () => {
     return (
         <>
             <section>
-                <HeroArea></HeroArea>
+               <Banner></Banner>
 
 
                 <div className='text-center container mx-auto my-5'>

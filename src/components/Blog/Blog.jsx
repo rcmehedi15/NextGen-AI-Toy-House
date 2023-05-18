@@ -43,7 +43,8 @@ const Blog = () => {
                                     <h1> 03: What is express js? What is Nest JS.</h1>
                                     <div className='answer'><span className='bg-danger'>Answer:</span> <br /> <br />
                                         <p>
-                                            <span >NestJS is a framework for developing modern server-side applications in Node. js. It is built on top of Express, a popular server framework for Node. js, and provides a robust set of features for building efficient, scalable, and enterprise-grade applications </span>
+                                            <span >Nest Js</span>
+                                            NestJS is a framework for developing modern server-side applications in Node. js. It is built on top of Express, a popular server framework for Node. js, and provides a robust set of features for building efficient, scalable, and enterprise-grade applications 
                                         </p>
                                     </div>
                                 </div>

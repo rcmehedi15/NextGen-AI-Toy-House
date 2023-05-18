@@ -7,6 +7,7 @@ import Banner from './Banner';
 import Contact from './Contact/Contact';
 import Why from './Why/Why';
 import Faq from './Faq/Faq';
+import Gallery from './Gallery/Gallery';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -15,8 +16,7 @@ const Home = () => {
         <>
             <section>
                <Banner></Banner>
-
-
+                <Gallery></Gallery>
                 <div className='text-center container mx-auto my-5'>
                     <h1 className='text-3xl font-bold '>OUR CHEF</h1>
                     <p className='text-gray-700 my-4'>Best Chef for our country </p>
@@ -32,6 +32,7 @@ const Home = () => {
                 </div>
 
                 <section>
+
                     <Why></Why>
                     <Testimonial></Testimonial>
                     <Contact></Contact>

@@ -11,7 +11,7 @@ const Testimonial = () => {
                     <div className="bg-white rounded-lg shadow-lg p-6">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80" alt="Testimonial 1" className="w-12 h-12 rounded-full mx-auto mb-4" />
                         <p className="text-gray-800 text-base mb-6">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut tincidunt, odio nec eleifend ."</p>
-                        <p className="text-gray-600 text-sm font-bold">- Sumaiya Akter</p>
+                        <p className="text-gray-600 text-sm font-bold">- Sumaiya Akhter</p>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/3 p-4">

@@ -79,7 +79,7 @@ const Contact = () => {
                             <h3 className="font-bold text-2xl py-2 text-[#243E63]">Call Us</h3>
                             <p className="w-3/4 mx-auto text-b7-secondary mb-3">
                                 +88 0198 96 18 543 <br />
-                                +88 0192 60 33 186
+                                +88 0187 87 97 328
                             </p>
                         </div>
 

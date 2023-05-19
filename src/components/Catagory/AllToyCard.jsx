@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 const AllToyCard = ({ singleToy }) => {
   const {
@@ -24,28 +24,26 @@ const AllToyCard = ({ singleToy }) => {
       // User is logged in, navigate to the single toy details page
       window.location.href = `/toysDetails/${_id}`;
     } else {
-      // User is not logged in, display the notification and redirect to the login page
-      Swal.fire({
-        title: 'Error!',
-        text: 'You have to log in first to view details',
-        icon: 'error',
-        confirmButtonText: 'OK',
-      }).then(() => {
-        window.location.href = '/login'; // Replace '/login' with your actual login page URL
+      // User is not logged in, show toast message
+      console.log(isLoggedIn);
+      toast.error('Please log in first.', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000, // Duration in milliseconds
+        
       });
     }
   };
 
   return (
     <>
-      <div className="card  w-full border-solid border-2 border-gray-200">
+      <div className="card w-full border-solid border-2 border-gray-200">
         <figure>
-          <img src={photo} alt="" className=" " />
+          <img src={photo} alt="" className="" />
         </figure>
         <div className="p-4">
           <h2 className="card-title text-2xl">{toyName}</h2>
-          <div className="flex gap-4 my-3 ">
-            <p className="text-[#EB455F]  border-gray-200  w-24 rounded-lg p-1">Rating: {Rating}</p>
+          <div className="flex gap-4 my-3">
+            <p className="text-[#EB455F] border-gray-200 w-24 rounded-lg p-1">Rating: {Rating}</p>
           </div>
           <div>
             <p className="text-gray-700 flex gap-2">

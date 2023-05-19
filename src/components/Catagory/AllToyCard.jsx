@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 const AllToyCard = ({ singleToy }) => {
     const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = singleToy;
-    console.log(singleToy);
+    
 
     // const { user } = useContext(ToyContext);
-    const [btnStatus, setBtnstatus] = useState(false);
-    const handleDisable = () => {
-        setBtnstatus(true);
-        Swal.fire({
-            title: 'Error!',
-            text: 'You have to log in first to view details',
-            icon: 'error',
-            confirmButtonText: 'Ok',
-        });
-    }
+    
+    // const [btnStatus, setBtnstatus] = useState(false);
+    // const handleDisable = () => {
+    //     setBtnstatus(true);
+    //     Swal.fire({
+    //         title: 'Error!',
+    //         text: 'You have to log in first to view details',
+    //         icon: 'error',
+    //         confirmButtonText: 'Cool',
+    //     });
+    // }
 
 
     return (
@@ -42,9 +43,9 @@ const AllToyCard = ({ singleToy }) => {
 
                 </div>
 
-                <button onClick={handleDisable} className=" ms-4 mb-3 p-3  rounded-lg bg-[#EB455F] text-white w-32" >
+                <Link to={`/toysDetails/${_id}`} className=" ms-4 mb-3 p-3  rounded-lg bg-[#EB455F] text-white w-32" >
                     View Details
-                </button>
+                </Link>
 
 
 

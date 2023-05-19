@@ -80,7 +80,7 @@ const Register = () => {
                             <input type="password" placeholder="Password" name='password' className="relative input input-bordered" required />
                         </div>
                         <div className="form-control mt-4">
-                            <button className="btn bg-orange-400 border-0">Sign Up</button>
+                            <button className="btn bg-[#EB455F] border-0 text-white">Sign Up</button>
                         </div>
                     </form>
                     <label className="p-10">

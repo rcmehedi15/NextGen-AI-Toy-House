@@ -17,6 +17,8 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Account from './components/Account/Account';
 import ToyProvider from './ToyProvider/ToyProvider';
 import ToyDetails from './components/Toy/ToyDetails';
+import AddToy from './components/Account/ProfileToy/AddToy';
+import MyToy from './components/Account/ProfileToy/MyToy';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRoute><Account></Account></PrivateRoute>
+      },
+      {
+        path: '/addToy',
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+      },
+      {
+        path: '/myToy',
+        element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
       },
       {
         path: '/FoodDetails/:jobId',

@@ -15,7 +15,7 @@ const Home = () => {
 
     return (
         <>
-            <section>
+            {/* <section>
                <Banner></Banner>
                 <Gallery></Gallery>
                 <Catagory></Catagory>
@@ -41,7 +41,7 @@ const Home = () => {
                     <Faq></Faq>
                 </section>
 
-            </section>
+            </section> */}
         </>
     );
 };

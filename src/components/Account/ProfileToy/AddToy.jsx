@@ -1,162 +1,148 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
-  const [pictureURL, setPictureURL] = useState('');
-  const [name, setName] = useState('');
-  const [sellerName, setSellerName] = useState('');
-  const [sellerEmail, setSellerEmail] = useState('');
-  const [subCategory, setSubCategory] = useState('');
-  const [price, setPrice] = useState('');
-  const [rating, setRating] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [description, setDescription] = useState('');
+    const handleAddToy = (event) => {
+        event.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+        const form = event.target;
 
-    // Here, you can add code to handle the form submission,
-    // such as sending the data to a server or updating state.
+        const toyName = form.toyname.value;
+        const sellerName = form.seller.value;
+        const sellerEmail = form.sellerEmail.value;
+        const photo = form.photo.value;
+        const subCategory = form.subCategory.value;
+        const Price = form.Price.value;
+        const Rating = form.Rating.value;
+        const availableQuantity = form.availableQuantity.value;
+        const detailDescription = form.detailDescription.value;
 
-    // Clearing the form fields after submission
-    setPictureURL('');
-    setName('');
-    setSellerName('');
-    setSellerEmail('');
-    setSubCategory('');
-    setPrice('');
-    setRating('');
-    setQuantity('');
-    setDescription('');
-  };
+        const fullDe = { photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
 
-  return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-8 ">Add A Toy <hr className='mt-2 w-52 mx-auto' /></h1>
-        
-        <form onSubmit={handleSubmit} className="container mx-auto bg-white p-6 rounded-md shadow-md">
-          <div className="flex flex-wrap -mx-2">
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="pictureURL">
-                Picture URL
-              </label>
-              <input
-                type="text"
-                id="pictureURL"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={pictureURL}
-                onChange={(e) => setPictureURL(e.target.value)}
-              />
+        console.log(fullDe);
+
+        // send data to the server
+        fetch('http://localhost:5000/coffee', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(fullDe),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool',
+                    });
+                }
+            });
+    };
+
+    return (
+        <div>
+            <div className="bg-[#F4F3F0] p-4 md:p-24">
+                <h2 className="text-3xl font-extrabold">Add a Toy</h2>
+                <form onSubmit={handleAddToy} className="">
+                    {/* toy and seller name   */}
+                    <div className="md:flex mb-4">
+                        <div className="form-control md:w-1/2 md:mr-2">
+                            <label className="label">
+                                <span className="label-text">Toy Name</span>
+                            </label>
+                            <label >
+                                <input required type="text" name="toyname" placeholder="Toy Name" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 md:ml-2">
+                            <label className="label">
+                                <span className="label-text">Seller Name</span>
+                            </label>
+                            <label >
+                                <input required type="text" name="seller" placeholder="Seller Name" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* sub catagory and seller email  */}
+                    <div className="md:flex mb-4">
+                        <div className="form-control md:w-1/2 md:mr-2">
+                            <label className="label">
+                                <span className="label-text">Sub-category</span>
+                            </label>
+                            <label >
+                                <input required type="text" name="subCategory" placeholder="Toy Name" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 md:ml-2">
+                            <label className="label">
+                                <span className="label-text">Seller Email</span>
+                            </label>
+                            <label >
+                                <input required type="email" name="sellerEmail" placeholder="seller Email" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                    </div>
+                    {/* rating and price  */}
+                    <div className="md:flex mb-4">
+                        <div className="form-control md:w-1/2 md:mr-2">
+                            <label className="label">
+                                <span className="label-text">Price</span>
+                            </label>
+                            <label >
+                                <input required type="number" name="Price" placeholder="Price" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 md:ml-2">
+                            <label className="label">
+                                <span className="label-text">Rating</span>
+                            </label>
+                            <label >
+                                <input required type="number" name="Rating" placeholder="Rating" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="md:flex mb-4">
+                        <div className="form-control md:w-1/2 md:mr-2">
+                            <label className="label">
+                                <span className="label-text">Available quantity</span>
+                            </label>
+                            <label >
+                                <input required type="number" name="availableQuantity" placeholder="Available quantity" className="border border-gray-300 p-2 rounded-md w-full" />
+                            </label>
+                        </div>
+                        <div className="form-control md:w-1/2 md:ml-2">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <label >
+                                <input required type="text" name="photo" placeholder="Photo URL" className="border border-gray-300 p-2 rounded-md w-full" />
+                                
+                            </label>
+                        </div>
+                    </div>
+
+                    {/* form Photo URL row */}
+                    <div className="mb-4">
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Detail description</span>
+                            </label>
+                            <label >
+                                <textarea required rows="4" type="text" name="detailDescription" placeholder="Detail description" className="border border-gray-300 p-2 rounded-md w-full" />
+                              
+                            </label>
+                        </div>
+                    </div>
+                    <input required type="submit" value="Add Toy" className="btn bg-[#EB455F] text-white border-none" />
+                </form>
             </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="sellerName">
-                Seller Name
-              </label>
-              <input
-                type="text"
-                id="sellerName"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={sellerName}
-                onChange={(e) => setSellerName(e.target.value)}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="sellerEmail">
-                Seller Email
-              </label>
-              <input
-                type="email"
-                id="sellerEmail"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={sellerEmail}
-                onChange={(e) => setSellerEmail(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-2">
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="subCategory">
-                Sub-category
-              </label>
-              <input
-                type="text"
-                id="subCategory"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={subCategory}
-                onChange={(e) => setSubCategory(e.target.value)}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="price">
-                Price
-              </label>
-              <input
-                type="text"
-                id="price"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="rating">
-                Rating
-              </label>
-              <input
-                type="text"
-                id="rating"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-2 mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="quantity">
-                Available Quantity
-              </label>
-              <input
-                type="text"
-                id="quantity"
-                className="border border-gray-300 p-2 rounded-md w-full"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="description">
-              Detail Description
-            </label>
-            <textarea
-              id="description"
-              className="border border-gray-300 p-2 rounded-md w-full"
-              rows="4"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            Add Toy
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default AddToy;

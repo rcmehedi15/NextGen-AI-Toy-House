@@ -17,17 +17,17 @@ const AddToy = () => {
         const availableQuantity = form.availableQuantity.value;
         const detailDescription = form.detailDescription.value;
 
-        const fullDe = { photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
+        const toyData = { photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
 
-        console.log(fullDe);
+        console.log(toyData);
 
         // send data to the server
-        fetch('http://localhost:5000/coffee', {
+        fetch('http://localhost:5000/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(fullDe),
+            body: JSON.stringify(toyData),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -47,7 +47,7 @@ const AddToy = () => {
         <div>
             <div className="bg-[#F4F3F0] p-4 md:p-24">
                 <h2 className="text-3xl font-extrabold">Add a Toy</h2>
-                <form onSubmit={handleAddToy} className="">
+                <form onSubmit={handleAddToy} >
                     {/* toy and seller name   */}
                     <div className="md:flex mb-4">
                         <div className="form-control md:w-1/2 md:mr-2">

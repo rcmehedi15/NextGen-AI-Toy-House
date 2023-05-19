@@ -16,9 +16,9 @@ import Register from './components/Register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Account from './components/Account/Account';
 import ToyProvider from './ToyProvider/ToyProvider';
-import ToyDetails from './components/Toy/ToyDetails';
 import AddToy from './components/Account/ProfileToy/AddToy';
 import MyToy from './components/Account/ProfileToy/MyToy';
+import AllToyCatagory from './components/Catagory/AllToyCatagory';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
+        path: '/AllToys',
+        element: <AllToyCatagory></AllToyCatagory>
+      },
+      {
         path: '/profile',
         element: <PrivateRoute><Account></Account></PrivateRoute>
       },
@@ -56,11 +60,7 @@ const router = createBrowserRouter([
         path: '/myToy',
         element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
       },
-      {
-        path: '/FoodDetails/:jobId',
-        element: <PrivateRoute><ToyDetails /></PrivateRoute>,
-        loader: () => fetch(`https://smfoodshop-server.vercel.app`)
-      },
+     
     ],
   },
 ]);

@@ -14,9 +14,9 @@ import ErrorPage from './components/ErrorPage';
 import EachJob from './components/Chef/chefDetails';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import ChefProvider from './ChefProvider/ChefProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Account from './components/Account/Account';
+import ToyProvider from './ToyProvider/ToyProvider';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -57,6 +57,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChefProvider><RouterProvider router={router} /></ChefProvider>
+    <ToyProvider><RouterProvider router={router} /></ToyProvider>
+    
   </React.StrictMode>,
 )

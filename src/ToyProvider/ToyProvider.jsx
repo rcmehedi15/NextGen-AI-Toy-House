@@ -8,7 +8,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
-const ChefProvider = ({children}) => {
+const ToyProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
@@ -63,4 +63,4 @@ const ChefProvider = ({children}) => {
     );
 };
 
-export default ChefProvider;
+export default ToyProvider;

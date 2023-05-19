@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ChefContext } from '../../ChefProvider/ChefProvider';
+import { ChefContext } from '../../ToyProvider/ToyProvider';
 
 const Account = () => {
     const {user} = useContext(ChefContext);

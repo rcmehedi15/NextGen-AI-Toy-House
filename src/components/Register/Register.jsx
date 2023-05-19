@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { updateProfile } from 'firebase/auth';
-import { ChefContext } from '../../ChefProvider/ChefProvider';
+import { ChefContext } from '../../ToyProvider/ToyProvider';
 
 
 const Register = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChefContext } from '../../ChefProvider/ChefProvider';
+import { ChefContext } from '../../ToyProvider/ToyProvider';
 
 const Login = () => {
     const {googleLogIn,user, login, gitHubLogin} = useContext(ChefContext);

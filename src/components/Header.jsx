@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import { ChefContext } from '../ChefProvider/ChefProvider';
+import { ChefContext } from '../ToyProvider/ToyProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(ChefContext);
@@ -17,7 +17,9 @@ const Header = () => {
     const handleClick = (buttonIndex) => {
         setActiveButton(buttonIndex);
     }
+    
     return (
+        
         <>
             <nav className='container mx-auto'>
                 <div className="navbar bg-base-100">
@@ -41,11 +43,17 @@ const Header = () => {
                         <ul className=" menu-horizontal">
                             <li><Link to="/" onClick={() => handleClick(0)} className={activeButton === 0 ? 'text-white bg-[#EB455F] rounded-lg p-2 m-4' : 'p-4'}>Home</Link></li>
                             <li><Link to="/blog" onClick={() => handleClick(1)} className={activeButton === 1 ? 'text-white bg-[#EB455F] rounded-lg p-2 m-4' : 'p-4'}>Blog</Link></li>
+
                         </ul>
                     </div>
                     <div className="navbar-end ">
                         {
-                            user && <Link to='/profile' className="btn btn-success md:navbar-start" >
+                            user 
+                            
+
+                            && 
+                            
+                            <Link to='/profile' className="btn btn-success md:navbar-start" >
                                 {user.displayName}
                             </Link>
                         }

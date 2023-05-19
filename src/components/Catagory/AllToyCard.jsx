@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import Swal from "sweetalert2";
 const AllToyCard = ({ singleToy }) => {
     const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = singleToy;
-    
+
 
     // const { user } = useContext(ToyContext);
     
@@ -27,7 +27,7 @@ const AllToyCard = ({ singleToy }) => {
                 <div className="p-4">
                     <h2 className="card-title text-2xl">{toyName}</h2>
                     <div className='flex gap-4  my-3 '>
-                        <p className='text-blue-500  border-gray-200  w-24 rounded-lg p-1'>Rating : {Rating}</p>
+                        <p className='text-[#EB455F]  border-gray-200  w-24 rounded-lg p-1'>Rating : {Rating}</p>
 
                     </div>
                     <div >

@@ -7,6 +7,7 @@ import Why from './Why/Why';
 import Faq from './Faq/Faq';
 import Gallery from './Gallery/Gallery';
 import Catagory from './Catagory/AllToyCatagory';
+import AllToyCatagory from './Catagory/AllToyCatagory';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -17,7 +18,7 @@ const Home = () => {
                <Banner></Banner>
                 <Gallery></Gallery>
                 <Catagory></Catagory>
-            ttt
+           
 
                 <section>
 
@@ -28,6 +29,7 @@ const Home = () => {
                 </section>
 
             </section> */}
+            <AllToyCatagory></AllToyCatagory>
         </>
     );
 };

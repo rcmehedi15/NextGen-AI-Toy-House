@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const ChefSection = ({ job }) => {
+const ToySection = ({ job }) => {
 
     const { _id, chef_name, chef_photo, year_of_exprience, number_of_recipes, Like, description, } = job;
 console.log(_id);
@@ -42,4 +42,4 @@ console.log(_id);
     );
 };
 
-export default ChefSection;
+export default ToySection;

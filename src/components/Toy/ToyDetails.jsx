@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 
 
-const chefDetails = () => {
+const ToyDetails = () => {
     const jobs = useLoaderData();
     const { jobId } = useParams();
     const findData = jobs.find(info => info._id === jobId)
@@ -64,4 +64,4 @@ const chefDetails = () => {
     );
 };
 
-export default chefDetails;
+export default ToyDetails;

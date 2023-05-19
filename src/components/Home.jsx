@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom'
-import ChefSection from './Chef/ChefSection';
+import ToySection from './Toy/ToySection';
 
 import Testimonial from './Testimonial/Testimonial';
 import Banner from './Banner';
@@ -26,9 +26,9 @@ const Home = () => {
                 <div className='container mx-auto my-5 '>
                     <div className=' grid grid-cols-2 container mx-auto gap-5'>
                         {
-                            jobs.map(job => <ChefSection key={job._id} job={job} >
+                            jobs.map(job => <ToySection key={job._id} job={job} >
 
-                            </ChefSection>)
+                            </ToySection>)
                         }
                     </div>
                 </div>

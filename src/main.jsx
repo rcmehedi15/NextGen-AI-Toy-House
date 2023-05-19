@@ -11,12 +11,12 @@ import {
 import Home from './components/Home';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage';
-import EachJob from './components/Chef/chefDetails';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Account from './components/Account/Account';
 import ToyProvider from './ToyProvider/ToyProvider';
+import ToyDetails from './components/Toy/ToyDetails';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/FoodDetails/:jobId',
-        element: <PrivateRoute><EachJob /></PrivateRoute>,
+        element: <PrivateRoute><ToyDetails /></PrivateRoute>,
         loader: () => fetch(`https://smfoodshop-server.vercel.app`)
       },
     ],

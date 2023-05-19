@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { ChefContext } from '../../ToyProvider/ToyProvider';
+import { ToyContext } from '../../ToyProvider/ToyProvider';
 
 const Account = () => {
-    const {user} = useContext(ChefContext);
+    const {user} = useContext(ToyContext);
     return (
         <div className='py-10 w-8/12 mx-auto flex flex-col justify-center items-center'>
             

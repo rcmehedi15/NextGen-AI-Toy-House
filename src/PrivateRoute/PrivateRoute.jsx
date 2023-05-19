@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { ChefContext } from '../ToyProvider/ToyProvider';
+import { ToyContext } from '../ToyProvider/ToyProvider';
 
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(ChefContext);
+    const { user, loading } = useContext(ToyContext);
     const location = useLocation();
 
     if (loading) {

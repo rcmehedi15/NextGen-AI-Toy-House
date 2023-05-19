@@ -3,7 +3,7 @@ import { GithubAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import app from '../firebase/firebase.config';
 import { GoogleAuthProvider } from "firebase/auth";
 
-export const ChefContext = createContext(null);
+export const ToyContext = createContext(null);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -57,9 +57,9 @@ const ToyProvider = ({children}) => {
         gitHubLogin
     }
     return (
-        <ChefContext.Provider value={chefInfo}>
+        <ToyContext.Provider value={chefInfo}>
             {children}
-        </ChefContext.Provider>
+        </ToyContext.Provider>
     );
 };
 

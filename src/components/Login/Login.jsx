@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChefContext } from '../../ToyProvider/ToyProvider';
+import { ToyContext } from '../../ToyProvider/ToyProvider';
 
 const Login = () => {
-    const {googleLogIn,user, login, gitHubLogin} = useContext(ChefContext);
+    const {googleLogIn,user, login, gitHubLogin} = useContext(ToyContext);
 
     const navigate = useNavigate();
     const location = useLocation();

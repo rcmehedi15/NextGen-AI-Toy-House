@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { updateProfile } from 'firebase/auth';
-import { ChefContext } from '../../ToyProvider/ToyProvider';
+import { ToyContext } from '../../ToyProvider/ToyProvider';
 
 
 const Register = () => {
@@ -10,7 +10,7 @@ const Register = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    const { signUp } = useContext(ChefContext);
+    const { signUp } = useContext(ToyContext);
     const HandleSignUp = (event) => {
         event.preventDefault();
         const form = event.target;

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
-import { ChefContext } from '../ToyProvider/ToyProvider';
+import { ToyContext } from '../ToyProvider/ToyProvider';
 
 const Header = () => {
-    const { user, logOut } = useContext(ChefContext);
+    const { user, logOut } = useContext(ToyContext);
     const handleLogOut = () => {
         logOut()
             .then(() => { })

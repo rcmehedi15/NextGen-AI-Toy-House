@@ -30,7 +30,7 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to="/" className="text-dark px-4" >Home</Link></li>
                             <li><Link to="/blog" className="justify-between text-dark px-4">Blog</Link></li>
-                            <li><Link to="/blog" className="justify-between text-dark px-4">Blog</Link></li>
+                            <li><Link to="/alltoyCard" className="justify-between text-dark px-4">All Toys</Link></li>
                             
 
                         </ul>

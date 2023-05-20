@@ -20,6 +20,7 @@ import AddToy from './components/Account/ProfileToy/AddToy';
 import MyToy from './components/Account/ProfileToy/MyToy';
 import AllToyCatagory from './components/Catagory/AllToyCatagory';
 import ToyDetails from './components/Catagory/ToyDetails';
+import AllToyCard from './components/Catagory/AllToyCard';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       },
 
   
+      {
+        path: '/alltoyCard',
+        element: <AllToyCatagory></AllToyCatagory>
+      },
       {
         path: '/blog',
         element: <Blog />

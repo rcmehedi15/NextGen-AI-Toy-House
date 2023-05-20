@@ -20,6 +20,18 @@ const AllToyCatagory = () => {
         setActiveTab(tabName);
     };
 
+    // search box 
+    const [searchText, setSearchText] = useState();
+  
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                setAllToy(result);
+            })
+    }
+
     return (
         <>
 
@@ -27,6 +39,17 @@ const AllToyCatagory = () => {
                 <h2 className="text-center text-4xl font-bold text-[#243E63] ">Shop by
                     <span className="bg-[#EB455F] text-white shape m-5 "> Category</span></h2>
                 <div className="tab-container text-center">
+                    <div className=" flex flex-col sm:flex-row justify-center items-center mb-4">
+                        <input
+                            onChange={(e) => setSearchText(e.target.value)}
+                            type="text"
+                            placeholder="Search"
+                            className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#EB455F] focus:border-transparent mb-2 sm:mb-0 sm:mr-2"
+                        /> {" "}
+                        <button onClick={handleSearch} className="px-4 py-2 bg-[#EB455F] text-white rounded-r-md">
+                            Search
+                        </button>
+                    </div>
                     <div className="text-center w-full mx-auto">
                         <div className="tabs flex justify-center items-center">
                             <div

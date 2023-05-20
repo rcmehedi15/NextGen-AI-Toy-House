@@ -7,13 +7,8 @@ const AllToyCard = ({ singleToy }) => {
     _id,
     photo,
     toyName,
-    sellerName,
-    sellerEmail,
-    subCategory,
     Price,
-    Rating,
-    availableQuantity,
-    detailDescription
+    Rating
   } = singleToy;
 
   const handleViewDetails = () => {

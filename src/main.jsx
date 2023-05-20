@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         errorElement: <ErrorPage />,
-        loader: () => fetch(`https://smfoodshop-server.vercel.app`)
+        loader: () => fetch(`http://localhost:5000/`)
       },
 
   

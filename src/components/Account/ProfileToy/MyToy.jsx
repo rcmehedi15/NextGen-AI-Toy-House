@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { ToyContext } from '../../../ToyProvider/ToyProvider';
 
 const MyToy = () => {
+    const user = useContext(ToyContext)
+    const [toys, setToy] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/myToys/mdmehedihasan20188@gmail.com`)
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                setToy(result);
+            })
+    }, [user]);
+
+
     return (
         <>
             <hr />
             <div className=" mx-auto text-center">
                 <h1 className="font-bold text-3xl mb-4">My Toy Post</h1>
 
-                <div className="flex flex-col sm:flex-row justify-center items-center mb-4">
+                <div className=" flex flex-col sm:flex-row justify-center items-center mb-4">
                     <input
                         type="text"
                         placeholder="Search"
@@ -18,10 +31,11 @@ const MyToy = () => {
                     </button>
                 </div>
 
-                <div className="overflow-x-auto">
+                <div className="p-4 overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead>
                             <tr>
+                                <th className="px-4 py-2">No</th>
                                 <th className="px-4 py-2">Picture</th>
                                 <th className="px-4 py-2">Toy Name</th>
                                 <th className="px-4 py-2">Seller Name</th>
@@ -35,28 +49,34 @@ const MyToy = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="bg-gray-100">
-                                <td className="px-4 py-2">
-                                    <img src="" alt="" />
-                                </td>
-                                <td className="px-4 py-2">Toy Name</td>
-                                <td className="px-4 py-2">Seller Name</td>
-                                <td className="px-4 py-2">seller@example.com</td>
-                                <td className="px-4 py-2">Toy Sub-category</td>
-                                <td className="px-4 py-2">Price</td>
-                                <td className="px-4 py-2">Rating</td>
-                                <td className="px-4 py-2">Available Quantity</td>
-                                <td className="px-4 py-2">Detail Description</td>
-                                <td className="px-4 py-2 flex space-x-2">
-                                    <button className="px-2 py-1 bg-green-600 text-white rounded-md">
-                                        Edit
-                                    </button>
-                                    <button className="px-2 py-1 bg-red-500 text-white rounded-md">
-                                        Delete
-                                    </button>
-                                </td>
+                            {
+                                toys?.map((toy,index) => (
+                                    <tr className="bg-gray-100">
+                                        <td>{index + 1}</td>
+                                        <td className="px-4 py-2">
+                                            <img src={toy.photo} alt="" />
+                                        </td>
+                                        <td className="px-4 py-2">{toy.toyName}</td>
+                                        <td className="px-4 py-2">{toy.sellerName}</td>
+                                        <td className="px-4 py-2">{toy.sellerEmail}</td>
+                                        <td className="px-4 py-2">{toy.subCategory}</td>
+                                        <td className="px-4 py-2">{toy.Price}</td>
+                                        <td className="px-4 py-2">{toy.Rating}</td>
+                                        <td className="px-4 py-2">{toy.availableQuantity}</td>
+                                        <td className="px-4 py-2">{toy.detailDescription}</td>
+                                        <td className="px-4 py-2 flex space-x-2">
+                                            <button className="px-2 py-1 bg-green-600 text-white rounded-md">
+                                                Edit
+                                            </button>
+                                            <button className="px-2 py-1 bg-red-500 text-white rounded-md">
+                                                Delete
+                                            </button>
+                                        </td>
 
-                            </tr>
+                                    </tr>
+                                ))
+                            }
+
                         </tbody>
                     </table>
                 </div>

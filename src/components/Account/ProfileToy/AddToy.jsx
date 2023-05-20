@@ -74,7 +74,7 @@ const AddToy = () => {
                                 <span className="label-text">Sub-category</span>
                             </label>
                             <label >
-                                <input required type="text" name="subCategory" placeholder="Toy Name" className="border border-gray-300 p-2 rounded-md w-full" />
+                                <input required type="text" name="subCategory" placeholder="Sub-category" className="border border-gray-300 p-2 rounded-md w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 md:ml-2">
@@ -82,7 +82,7 @@ const AddToy = () => {
                                 <span className="label-text">Seller Email</span>
                             </label>
                             <label >
-                                <input required type="email" name="sellerEmail" placeholder="seller Email" className="border border-gray-300 p-2 rounded-md w-full" />
+                                <input required  type="email" name="sellerEmail" placeholder="Website Login Email" className="border border-gray-300 p-2 rounded-md w-full" />
                             </label>
                         </div>
                     </div>

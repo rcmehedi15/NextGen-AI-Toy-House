@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { ToyContext } from '../../../ToyProvider/ToyProvider';
 
 const AddToy = () => {
+    const {user} = useContext(ToyContext)
     const handleAddToy = (event) => {
         event.preventDefault();
 
@@ -9,7 +11,9 @@ const AddToy = () => {
 
         const toyName = form.toyname.value;
         const sellerName = form.seller.value;
-        const sellerEmail = form.sellerEmail.value;
+         
+        const sellerEmail = form.sellerEmail.value; 
+
         const photo = form.photo.value;
         const subCategory = form.subCategory.value;
         const Price = form.Price.value;
@@ -17,7 +21,7 @@ const AddToy = () => {
         const availableQuantity = form.availableQuantity.value;
         const detailDescription = form.detailDescription.value;
 
-        const toyData = { photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
+        const toyData = { photo, toyName, sellerName,sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
 
         console.log(toyData);
 
@@ -82,7 +86,7 @@ const AddToy = () => {
                                 <span className="label-text">Seller Email</span>
                             </label>
                             <label >
-                                <input required  type="email" name="sellerEmail" placeholder="Website Login Email" className="border border-gray-300 p-2 rounded-md w-full" />
+                                <input required  type="email" name='sellerEmail' value={user?.email} placeholder="Website Login Email" className="border border-gray-300 p-2 rounded-md w-full" />
                             </label>
                         </div>
                     </div>

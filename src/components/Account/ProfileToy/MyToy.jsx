@@ -1,19 +1,60 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ToyContext } from '../../../ToyProvider/ToyProvider';
 
+import Swal from "sweetalert2";
+
+
 const MyToy = () => {
-    const user = useContext(ToyContext)
+    const {user} = useContext(ToyContext)
     const [toys, setToy] = useState([])
+    const url = `http://localhost:5000/myToys?email=${user.email}`;
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/mdmehedihasan20188@gmail.com`)
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
-                setToy(result);
-            })
-    }, [user]);
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setToy(data) )
+    },[])
 
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/myToys/${user?.email}`)
+    //         .then((res) => res.json())
+    //         .then((result) => {
+    //             console.log(result);
+    //             setToy(result);
+    //         })
+    // }, [user]);
 
+    // delete data 
+
+    // const handleDelete = _id => {
+    //     console.log(_id);
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+
+    //             fetch(`http://localhost:5000/myToys/${_id}`, {
+    //                 method: 'DELETE'
+    //             })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     if (data.deletedCount > 0) {
+    //                         Swal.fire(
+    //                             'Deleted!',
+    //                             'Your Coffee has been deleted.',
+    //                             'success'
+    //                         )
+    //                     }
+
+    //                 })
+    //         }
+    //     })
+    // }
     return (
         <>
             <hr />
@@ -50,7 +91,7 @@ const MyToy = () => {
                         </thead>
                         <tbody>
                             {
-                                toys?.map((toy,index) => (
+                                toys?.map((toy, index) => (
                                     <tr className="bg-gray-100">
                                         <td>{index + 1}</td>
                                         <td className="px-4 py-2">
@@ -68,7 +109,7 @@ const MyToy = () => {
                                             <button className="px-2 py-1 bg-green-600 text-white rounded-md">
                                                 Edit
                                             </button>
-                                            <button className="px-2 py-1 bg-red-500 text-white rounded-md">
+                                            <button className="px-2 py-1 bg-red-500 text-white rounded-md" >
                                                 Delete
                                             </button>
                                         </td>

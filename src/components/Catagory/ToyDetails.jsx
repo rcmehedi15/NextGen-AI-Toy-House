@@ -19,6 +19,8 @@ const ToyDetails = () => {
                 <div className="px-6 py-4">
                     <div className="font-bold  text-xl mb-2"><span className=' text-[#EB455F]  '>Toy Name: </span> {toyName} </div><br />
                     <p className="text-gray-700 text-base "> <span className='p-2 bg-[#EB455F] rounded-md text-white'>Product Description </span> <br /> <br />{detailDescription}</p> <br />
+                    <p className="text-gray-700 text-base "> <span className='p-2 bg-[#33aa65] rounded-md text-white'>Product Details </span> <br /> <br /></p>
+                    
                     <p className="text-gray-700 text-base">Price: {Price}</p>
                     <p className="text-gray-700 text-base">Rating: {Rating}</p>
                     <p className="text-gray-700 text-base">Available Quantity: {availableQuantity}</p>

@@ -2,9 +2,68 @@ import React from 'react';
 
 const MyToy = () => {
     return (
-        <div>
-           
-        </div>
+        <>
+            <hr />
+            <div className=" mx-auto text-center">
+                <h1 className="font-bold text-3xl mb-4">My Toy Post</h1>
+
+                <div className="flex flex-col sm:flex-row justify-center items-center mb-4">
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#EB455F] focus:border-transparent mb-2 sm:mb-0 sm:mr-2"
+                    />
+                    <button className="px-4 py-2 bg-[#EB455F] text-white rounded-r-md">
+                        Search
+                    </button>
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th className="px-4 py-2">Picture</th>
+                                <th className="px-4 py-2">Toy Name</th>
+                                <th className="px-4 py-2">Seller Name</th>
+                                <th className="px-4 py-2">Seller Email</th>
+                                <th className="px-4 py-2">Sub-category</th>
+                                <th className="px-4 py-2">Price</th>
+                                <th className="px-4 py-2">Rating</th>
+                                <th className="px-4 py-2">Available Quantity</th>
+                                <th className="px-4 py-2">Description</th>
+                                <th className="px-4 py-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="bg-gray-100">
+                                <td className="px-4 py-2">
+                                    <img src="" alt="" />
+                                </td>
+                                <td className="px-4 py-2">Toy Name</td>
+                                <td className="px-4 py-2">Seller Name</td>
+                                <td className="px-4 py-2">seller@example.com</td>
+                                <td className="px-4 py-2">Toy Sub-category</td>
+                                <td className="px-4 py-2">Price</td>
+                                <td className="px-4 py-2">Rating</td>
+                                <td className="px-4 py-2">Available Quantity</td>
+                                <td className="px-4 py-2">Detail Description</td>
+                                <td className="px-4 py-2 flex space-x-2">
+                                    <button className="px-2 py-1 bg-green-600 text-white rounded-md">
+                                        Edit
+                                    </button>
+                                    <button className="px-2 py-1 bg-red-500 text-white rounded-md">
+                                        Delete
+                                    </button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </>
     );
 };
 

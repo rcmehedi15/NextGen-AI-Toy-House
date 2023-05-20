@@ -24,6 +24,7 @@ const AddToy = () => {
         const toyData = { photo, toyName, sellerName,sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription };
 
         console.log(toyData);
+        form.reset();
 
         // send data to the server
         fetch('http://localhost:5000/addToy', {

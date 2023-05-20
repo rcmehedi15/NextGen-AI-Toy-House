@@ -61,17 +61,7 @@ const MyToy = () => {
             <div className=" mx-auto text-center">
                 <h1 className="font-bold text-3xl mb-4">My Toy Post</h1>
 
-                <div className=" flex flex-col sm:flex-row justify-center items-center mb-4">
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#EB455F] focus:border-transparent mb-2 sm:mb-0 sm:mr-2"
-                    />
-                    <button className="px-4 py-2 bg-[#EB455F] text-white rounded-r-md">
-                        Search
-                    </button>
-                </div>
-
+              
                 <div className="p-4 overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead>

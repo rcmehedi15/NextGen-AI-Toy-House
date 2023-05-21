@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import AllToyCard from './AllToyCard';
+
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
 
 
-const AllToyCatagory = () => {
+const ShopByCatagory = () => {
     const [activeTab, setActiveTab] = useState("All Toys");
 
     const [Alltoy, setAllToy] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5001/allToys/${activeTab}`)
+        fetch(`http://localhost:5001/toys`)
             .then((res) => res.json())
             .then((result) => {
                 setAllToy(result);
@@ -104,11 +104,11 @@ const AllToyCatagory = () => {
                             <tbody>
                                 {/* row 1 */}
 
-                                {
+                                {/* {
                                     Alltoy.map((singleToy) => (
                                         <AllToyCard singleToy={singleToy} key={singleToy._id}></AllToyCard>
                                     ))
-                                }
+                                } */}
                             </tbody>
                             {/* foot */}
                             
@@ -126,4 +126,4 @@ const AllToyCatagory = () => {
     );
 };
 
-export default AllToyCatagory;
+export default ShopByCatagory;

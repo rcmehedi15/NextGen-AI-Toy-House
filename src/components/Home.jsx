@@ -6,8 +6,8 @@ import Contact from './Contact/Contact';
 import Why from './Why/Why';
 import Faq from './Faq/Faq';
 import Gallery from './Gallery/Gallery';
-import Catagory from './Catagory/AllToyCatagory';
-import AllToyCatagory from './Catagory/AllToyCatagory';
+import Catagory from './Catagory/ShopByCatagory/ShopByCatagory';
+import AllToyCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -17,7 +17,7 @@ const Home = () => {
             {/* <section>
                <Banner></Banner>
                 <Gallery></Gallery>
-                <Catagory></Catagory>
+                
            
 
                 <section>
@@ -29,7 +29,7 @@ const Home = () => {
                 </section>
 
             </section> */}
-            <AllToyCatagory></AllToyCatagory>
+            
         </>
     );
 };

@@ -18,10 +18,10 @@ import Account from './components/Account/Account';
 import ToyProvider from './ToyProvider/ToyProvider';
 import AddToy from './components/Account/ProfileToy/AddToy';
 import MyToy from './components/Account/ProfileToy/MyToy';
-import AllToyCatagory from './components/Catagory/AllToyCatagory';
+import AllToyCatagory from './components/Catagory/ShopByCatagory/ShopByCatagory';
 import ToyDetails from './components/Catagory/ToyDetails';
-import AllToyCard from './components/Catagory/AllToyCard';
 import EditToy from './components/Account/ProfileToy/EditToy';
+import AllToyDataReceive from './components/Catagory/AllToy/AllToyDataReceive';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,14 +30,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        errorElement: <ErrorPage />,
-        loader: () => fetch(`http://localhost:5001/`)
+         
       },
 
   
       {
         path: '/alltoyCard',
-        element: <AllToyCatagory></AllToyCatagory>
+        element: <AllToyDataReceive></AllToyDataReceive>,
+        // loader: () => fetch(`http://localhost:5001/toys`)
       },
       {
         path: '/blog',
@@ -72,7 +72,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute><EditToy></EditToy></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5001/toys/${params.id}`)
       },
-     
+      {
+        path: 'toysDetails/:toyId',
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5001/toys/${params.toyId}`)
+      },
     ],
   },
 ]);

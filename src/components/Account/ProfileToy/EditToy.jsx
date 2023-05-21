@@ -13,7 +13,7 @@ const EditToy = () => {
         const form = event.target;
 
         const Price = form.Price.value;
-        const availableQuantity = form.detailDescription.value;
+        const availableQuantity = form.availableQuantity.value;
         const detailDescription = form.detailDescription.value;
         const editedToy = { Price, availableQuantity, detailDescription }
         console.log(editedToy);

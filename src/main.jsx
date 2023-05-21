@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/alltoyCard',
         element: <AllToyDataReceive></AllToyDataReceive>,
-        // loader: () => fetch(`https://next-gen-toy-server.vercel.app/toys`)
+        
       },
       {
         path: '/blog',

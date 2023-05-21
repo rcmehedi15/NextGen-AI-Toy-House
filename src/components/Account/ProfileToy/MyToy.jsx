@@ -43,12 +43,12 @@ const MyToy = () => {
     }
 
     // sort 
-   const handleAsc = () =>{
-    setSort("asc")
-   }
-   const handleDac = () =>{
-    setSort("dac")
-   }
+    const handleAsc = () => {
+        setSort("asc")
+    }
+    const handleDac = () => {
+        setSort("dac")
+    }
 
     return (
         <>
@@ -56,9 +56,9 @@ const MyToy = () => {
             <div className=" mx-auto text-center">
                 <h1 className="font-bold text-3xl mb-4">My Toy Post</h1>
 
-                <div className='flex gap-10  '>
-                    <button onClick={() => handleAsc()}>Asc</button>
-                    <button onClick={() => handleDac()}>Dec</button>
+                <div className=' gap-2  flex items-center justify-center '>
+                    <button onClick={() => handleAsc()} className="btn btn-error">Acending</button>
+                    <button onClick={() => handleDac()} className="btn btn-outline btn-success">Descendingec</button>
                 </div>
                 <div className="p-4 overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">

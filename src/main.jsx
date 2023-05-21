@@ -30,10 +30,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-         
+      
       },
-
-  
       {
         path: '/alltoyCard',
         element: <AllToyDataReceive></AllToyDataReceive>,
@@ -70,13 +68,17 @@ const router = createBrowserRouter([
       {
         path: 'EditToy/:id',
         element: <PrivateRoute><EditToy></EditToy></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5001/toys/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5001/toys/${params.id}`)
       },
       {
         path: 'toysDetails/:toyId',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5001/toys/${params.toyId}`)
+        loader: ({ params }) => fetch(`http://localhost:5001/toys/${params.toyId}`)
       },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
+      }
     ],
   },
 ]);
@@ -84,6 +86,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ToyProvider><RouterProvider router={router} /></ToyProvider>
-    
+
   </React.StrictMode>,
 )

@@ -15,7 +15,7 @@ const MyToy = () => {
 
     const [toys, setToy] = useState([])
     // login use show my toy
-    const url = `http://localhost:5001/myToys?sort=${sort}&email=${user?.email}`;
+    const url = `https://next-gen-toy-server.vercel.app/myToys?sort=${sort}&email=${user?.email}`;
     console.log(url);
     useEffect(() => {
         fetch(url)
@@ -26,7 +26,7 @@ const MyToy = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
         if (proceed) {
-            fetch(`http://localhost:5001/myToys/${id}`, {
+            fetch(`https://next-gen-toy-server.vercel.app/myToys/${id}`, {
                 method: 'DELETE',
 
             })

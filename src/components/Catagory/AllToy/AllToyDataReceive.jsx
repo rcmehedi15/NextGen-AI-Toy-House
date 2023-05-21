@@ -11,7 +11,7 @@ const AllToyDataReceive = () => {
     const [limit, setLimit] = useState(20);
 
     useEffect(() => {
-        fetch(`http://localhost:5001/toys?limit=${limit}`)
+        fetch(`https://next-gen-toy-server.vercel.app/toys?limit=${limit}`)
             .then((res) => res.json())
             .then((data) => setallToy(data))
     }, [])
@@ -22,7 +22,7 @@ const AllToyDataReceive = () => {
     const [searchText, setSearchText] = useState();
     
     const handleSearch = () => {
-        fetch(`http://localhost:5001/toySearchByTitle/${searchText}`)
+        fetch(`https://next-gen-toy-server.vercel.app/toySearchByTitle/${searchText}`)
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);

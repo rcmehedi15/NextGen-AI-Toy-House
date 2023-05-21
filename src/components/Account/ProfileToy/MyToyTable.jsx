@@ -11,7 +11,7 @@ const MyToyTable = ({ toy, index,handleDelete }) => {
     // const handleDelete = _id => {
     //     const proceed = confirm("are you sure you want to delete");
     //     if (proceed) {
-    //         fetch(`http://localhost:5001/myToys/${_id}`, {
+    //         fetch(`https://next-gen-toy-server.vercel.app/myToys/${_id}`, {
     //             method: 'DELETE'
     //         })
     //             .then(res => res.json())

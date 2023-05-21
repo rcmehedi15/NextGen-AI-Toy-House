@@ -30,7 +30,7 @@ const AddToy = () => {
         form.reset();
 
         // send data to the server
-        fetch('http://localhost:5001/addToy', {
+        fetch('https://next-gen-toy-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

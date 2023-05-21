@@ -10,12 +10,12 @@ const ShopByCatagory = () => {
 
     const [Alltoy, setAllToy] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5001/AllToys/${activeTab}`)
+        fetch(`https://next-gen-toy-server.vercel.app/AllToys/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setAllToy(result);
             })
-        fetch(`http://localhost:5001/AllToys/${activeTab}`)
+        fetch(`https://next-gen-toy-server.vercel.app/AllToys/${activeTab}`)
     }, [activeTab])
 
     const handleTabClick = (tabName) => {

@@ -22,7 +22,7 @@ const EditToy = () => {
         const editedToy = { Price, availableQuantity, detailDescription }
         console.log(editedToy);
 
-        fetch(`http://localhost:5001/toys/${_id}`, {
+        fetch(`https://next-gen-toy-server.vercel.app/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

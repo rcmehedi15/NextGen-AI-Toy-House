@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ShopByTable = ({ singleToy ,index}) => {
     const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = singleToy;
-    console.log(singleToy,index);
+    // console.log(singleToy,index);
 
     return (
         <>

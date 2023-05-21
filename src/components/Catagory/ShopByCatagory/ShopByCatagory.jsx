@@ -10,11 +10,12 @@ const ShopByCatagory = () => {
 
     const [Alltoy, setAllToy] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5001/toys`)
+        fetch(`http://localhost:5001/AllToys/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setAllToy(result);
             })
+        fetch(`http://localhost:5001//AllToys/${activeTab}`)
     }, [activeTab])
 
     const handleTabClick = (tabName) => {
@@ -24,14 +25,7 @@ const ShopByCatagory = () => {
     // search box 
     const [searchText, setSearchText] = useState();
 
-    const handleSearch = () => {
-        fetch(`http://localhost:5001/toySearchByTitle/${searchText}`)
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
-                setAllToy(result);
-            })
-    }
+
 
     return (
         <>
@@ -40,22 +34,12 @@ const ShopByCatagory = () => {
                 <h2 className="text-center text-4xl font-bold text-[#243E63] ">Shop by
                     <span className="bg-[#EB455F] text-white shape m-5 "> Category</span></h2>
                 <div className="tab-container text-center">
-                    <div className=" flex flex-col sm:flex-row justify-center items-center mb-4">
-                        <input
-                            onChange={(e) => setSearchText(e.target.value)}
-                            type="text"
-                            placeholder="Search"
-                            className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#EB455F] focus:border-transparent mb-2 sm:mb-0 sm:mr-2"
-                        /> {" "}
-                        <button onClick={handleSearch} className="px-4 py-2 bg-[#EB455F] text-white rounded-r-md">
-                            Search
-                        </button>
-                    </div>
+
                     <div className="text-center w-full mx-auto my-4">
                         <div className="tabs flex justify-center items-center">
                             <div
                                 onClick={() => handleTabClick("All Toys")}
-                                className={`tab tab2 allToy ${activeTab === "All Toys" ? "bg-[#EB455F] text-white" : ""
+                                className={`tab tab2 Alltoy ${activeTab === "All Toys" ? "bg-[#EB455F] text-white" : ""
                                     }`}
                             >
                                 All Toys
@@ -108,7 +92,7 @@ const ShopByCatagory = () => {
                                 {/* row 1 */}
 
                                 {
-                                    Alltoy?.map((singleToy,index) => (
+                                    Alltoy?.map((singleToy, index) => (
                                         <ShopByTable index={index} singleToy={singleToy} key={singleToy._id}></ShopByTable>
                                     ))
                                 }

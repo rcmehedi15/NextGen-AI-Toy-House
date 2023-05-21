@@ -12,8 +12,20 @@ const AllToyDataReceive = () => {
             .then((res) => res.json())
             .then((data) => setallToy(data))
     }, [])
-    console.log(allToy);
 
+
+    // search 
+   
+    const [searchText, setSearchText] = useState();
+    
+    const handleSearch = () => {
+        fetch(`http://localhost:5001/toySearchByTitle/${searchText}`)
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                setallToy(result);
+            })
+    }
     // const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = allToys;
 
     // console.log(allToys);
@@ -25,6 +37,17 @@ const AllToyDataReceive = () => {
                     <span className="bg-[#EB455F] text-white shape m-2  ">Page</span></h2>
 
                 <div className="overflow-x-auto w-full">
+                    <div className=" flex flex-col sm:flex-row justify-center items-center mb-4">
+                        <input
+                            onChange={(e) => setSearchText(e.target.value)}
+                            type="text"
+                            placeholder="Search"
+                            className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#EB455F] focus:border-transparent mb-2 sm:mb-0 sm:mr-2"
+                        /> {" "}
+                        <button onClick={handleSearch} className="px-4 py-2 bg-[#EB455F] text-white rounded-r-md">
+                            Search
+                        </button>
+                    </div>
                     <table className="table w-full">
 
                         <thead>
@@ -40,7 +63,7 @@ const AllToyDataReceive = () => {
                         <tbody>
 
                             {
-                                allToy?.map((Toy,index) => (
+                                allToy?.map((Toy, index) => (
                                     <ToyCard index={index} Toy={Toy} key={Toy._id}></ToyCard>
                                 ))
                             }
@@ -49,7 +72,7 @@ const AllToyDataReceive = () => {
 
 
                     </table>
-                    <hr className='my-5'/>
+                    <hr className='my-5' />
                     <div className='text-center my-4'>
                         <button className="btn btn-active btn-success text-white  ">See More</button>
 

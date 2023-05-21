@@ -15,8 +15,8 @@ const ToyDetails = () => {
     // console.log(findToySingleData);
     return (
         <>
-            <h1 className='text-center font-bold mt-4 bg-slate-500 p-5 text-white container rounded-lg mx-auto'>Toy Details </h1>
-            <div className="max-w-sm container mx-auto rounded overflow-hidden shadow-lg my-4">
+            <h1 className='text-center font-bold mt-4 bg-slate-700 p-5 text-white container rounded-lg mx-auto'>Toy Details </h1>
+            <div className="max-w-lg container mx-auto rounded overflow-hidden shadow-lg my-4">
                 <img className="w-full" src={photo} alt={toyName} />
                 <div className="px-6 py-4">
                     <div className="font-bold  text-xl mb-2"><span className=' text-[#EB455F]  '>Toy Name: </span> {toyName} </div><br />

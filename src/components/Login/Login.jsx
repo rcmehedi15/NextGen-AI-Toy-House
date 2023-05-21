@@ -19,7 +19,7 @@ const Login = () => {
         login(email, password)
         .then(result =>{
             const loggedUser = result.user;
-            console.log(loggedUser);
+            // console.log(loggedUser);
             navigate(from, { replace: true })
         })
         .catch(error => {
@@ -31,7 +31,7 @@ const Login = () => {
         googleLogIn()
         .then(result =>{
             const loggedUSer = result.user;
-            console.log(loggedUSer);
+            // console.log(loggedUSer);
             navigate(from, { replace: true });
         })
         .catch(error =>{

@@ -9,6 +9,8 @@ import Gallery from './Gallery/Gallery';
 import Catagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import AllToyCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import ShopByCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
+import AosAnimation from './Aos/AosAnimation';
+
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -31,6 +33,8 @@ const Home = () => {
 
             </section> */}
             <ShopByCatagory></ShopByCatagory>
+            <AosAnimation></AosAnimation>
+          
             
         </>
     );

@@ -10,7 +10,6 @@ import {
 
 import Home from './components/Home';
 import Blog from './components/Blog/Blog';
-import ErrorPage from './components/ErrorPage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -22,6 +21,7 @@ import AllToyCatagory from './components/Catagory/ShopByCatagory/ShopByCatagory'
 import ToyDetails from './components/Catagory/ToyDetails';
 import EditToy from './components/Account/ProfileToy/EditToy';
 import AllToyDataReceive from './components/Catagory/AllToy/AllToyDataReceive';
+import NotFoundPage from './components/NotFoundPage';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+        errorElement: <NotFoundPage></NotFoundPage>
       
       },
       {
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <ErrorPage></ErrorPage>
+        element: <NotFoundPage></NotFoundPage>
       }
     ],
   },

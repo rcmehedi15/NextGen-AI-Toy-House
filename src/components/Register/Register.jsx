@@ -28,7 +28,7 @@ const Register = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                alert("input Details Wrong,Try again");
             })
     }
 
@@ -38,10 +38,10 @@ const Register = () => {
             photoURL: photo,
         })
             .then(() => {
-                console.log('User name updated')
+                alert('Succesfully Register')
             })
             .catch(error => {
-                console.log(error);
+                alert("Wrong Input");
             })
     }
 

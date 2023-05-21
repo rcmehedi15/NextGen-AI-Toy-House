@@ -49,8 +49,8 @@ const Footer = () => {
         </div>
         <div className="container mx-auto text-center mt-4">
           <p className="text-gray-500">#280, Sarshi, Kasipur, Barishal</p>
-          <p className="text-gray-500">Phone: +8801989618543 | Email: mehedi@gmail.com</p>
-          <p className="text-gray-500">&copy; 2023 Md Mehedi Hasan. All rights reserved.</p>
+          <p className="text-gray-500">Phone: +8801989618543 | Email: mdmehedihasan20188@gmail.com</p>
+          <p className="text-gray-500">Copyright © 2023 - All right reserved by <a href="https://facebook.com/rcmehedi15" className='text-green-600 '>Rc Mehedi Hasan</a></p>
         </div>
       </footer>
 

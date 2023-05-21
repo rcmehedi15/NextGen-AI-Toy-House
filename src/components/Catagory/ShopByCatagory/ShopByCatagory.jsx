@@ -80,10 +80,10 @@ const ShopByCatagory = () => {
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Produt Name & Catagories</th>
-                                    <th>Seller Details</th>
+                                    <th>Picture </th>     
+                                    <th>Toy Name </th>     
+                                    <th>Rating</th>
                                     <th>Price</th>
-                                    <th>Available Quantity</th>
                                     <th>Details</th>
 
                                 </tr>

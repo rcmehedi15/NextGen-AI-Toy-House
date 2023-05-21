@@ -4,7 +4,7 @@
   <h2>Main Website Live Link</h2>
   <p>You can access the live version of the project at: <a href="https://nextgen-toy.web.app">Our Live Website </a></p>
   <h2>Server Link</h2>
-  <p>You can access the live version of the project at: <a href="https://next-gen-toy-server.vercel">Our Server Live Link </a></p>
+  <p>You can access the live version of the project at: <a href="https://next-gen-toy-server.vercel.app/">Our Server Live Link </a></p>
   
 
   <h2>Features</h2>

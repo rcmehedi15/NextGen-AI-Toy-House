@@ -54,7 +54,7 @@ const ToyProvider = ({children}) => {
         loading,
         auth,
         googleLogIn,
-        gitHubLogin
+        
     }
     return (
         <ToyContext.Provider value={chefInfo}>

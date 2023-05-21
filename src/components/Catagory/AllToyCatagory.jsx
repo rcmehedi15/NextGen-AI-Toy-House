@@ -9,7 +9,7 @@ const AllToyCatagory = () => {
 
     const [Alltoy, setAllToy] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys/${activeTab}`)
+        fetch(`http://localhost:5001/allToys/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setAllToy(result);
@@ -22,9 +22,9 @@ const AllToyCatagory = () => {
 
     // search box 
     const [searchText, setSearchText] = useState();
-  
+
     const handleSearch = () => {
-        fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+        fetch(`http://localhost:5001/toySearchByTitle/${searchText}`)
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);
@@ -83,15 +83,40 @@ const AllToyCatagory = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 container mx-auto gap-4 my-4 md:gap-4 ">
+                <div >
 
 
 
-                    {
-                        Alltoy.map((singleToy) => (
-                            <AllToyCard singleToy={singleToy} key={singleToy._id}></AllToyCard>
-                        ))
-                    }
+
+
+                    <div className="overflow-x-auto w-full">
+                        <table className="table w-full">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Produt Name & Catagories</th>
+                                    <th>Seller Details</th>
+                                    <th>Price</th>
+                                    <th>Available Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {/* row 1 */}
+
+                                {
+                                    Alltoy.map((singleToy) => (
+                                        <AllToyCard singleToy={singleToy} key={singleToy._id}></AllToyCard>
+                                    ))
+                                }
+                            </tbody>
+                            {/* foot */}
+                            
+
+                        </table>
+                    </div>
+
+
                 </div>
 
             </div>

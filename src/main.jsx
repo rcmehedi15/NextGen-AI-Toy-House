@@ -21,6 +21,7 @@ import MyToy from './components/Account/ProfileToy/MyToy';
 import AllToyCatagory from './components/Catagory/AllToyCatagory';
 import ToyDetails from './components/Catagory/ToyDetails';
 import AllToyCard from './components/Catagory/AllToyCard';
+import EditToy from './components/Account/ProfileToy/EditToy';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         errorElement: <ErrorPage />,
-        loader: () => fetch(`http://localhost:5000/`)
+        loader: () => fetch(`http://localhost:5001/`)
       },
 
   
@@ -67,11 +68,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
       },
       {
-        path: `/toysDetails/:_id`,
-        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allToys/${params._id}`)
-        
+        path: 'EditToy/:id',
+        element: <PrivateRoute><EditToy></EditToy></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5001/toys/${params.id}`)
       },
+     
     ],
   },
 ]);

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import { ToyContext } from '../ToyProvider/ToyProvider';
-
+import './Header.css'
 const Header = () => {
-    const { user, logOut } = useContext(ToyContext);
+    const { user, logOut, loading } = useContext(ToyContext);
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -48,53 +48,49 @@ const Header = () => {
                 </div>
 
 
-                <div className="navbar-end flex-none gap-2">
-                    {/* <div className="form-control">
-                        <input type="text" placeholder="Search" className="input input-bordered" />
-                    </div> */}
-                    {
-                        !user ? <Link to="/profile" className="btn bg-[#EB455F] text-white border-none">Login <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg></Link>
+              
+                <div className='navbar navbar-end'>
+                    <div className="dropdown dropdown-end ">
+                        {
+                            !loading ? <div>
+                                {
+                                    user ? <>
 
-                            :
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        {
-                                            user &&
-                                            <a >
-                                                <img src={user.photoURL} alt="" />
-                                            </a>
-                                        }
-
-                                    </div>
-                                </label>
-                                <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                                    <li>
-                                        <Link to="/profile" className="justify-between">
-                                            Profile
-                                            <span className="badge">New</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/addToy">
-                                            Add Toy
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/myToy">
-                                            My Toy
-                                        </Link>
-                                    </li>
-                                    <li><Link onClick={handleLogOut} >Logout</Link></li>
-                                </ul>
-                            </div>
-
-                    }
-
-
+                                        <div id='parent-user-profile' className='flex items-center gap-x-3'>
+                                            <label id='user-pic' tabIndex={0} className="relative btn btn-ghost btn-circle avatar flex-row-reverse">
+                                                <div className="w-12 rounded-full">
+                                                    <img src={user.photoURL ? user.photoURL : 'https://freesvg.org/img/abstract-user-flat-4.png'} />
+                                                </div>
+                                                <p id='user-name' className='absolute right-14 top-5 opacity-0 text-lg btn bg-white border-0 shadow-md btn-sm font-medium text-error overflow-hidden'>{user.displayName ? user.displayName : user?.email}</p>
+                                            </label>
+                                        </div>
+                                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                            <li>
+                                                <Link to="/profile" className="justify-between">
+                                                    Profile
+                                                    <span className="badge">New</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/addToy">
+                                                    Add Toy
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/myToy">
+                                                    My Toy
+                                                </Link>
+                                            </li>
+                                            
+                                            <li><Link onClick={handleLogOut} >Logout</Link></li>
+                                        </ul>
+                                    </> : <Link to='/login' className='btn btn-sm btn-outline hover:border-error rounded-md hover:bg-error hover:text-white'>Login</Link>
+                                }
+                            </div> : <p>Loading...</p>
+                        }
+                    </div>
                 </div>
+
             </div>
 
         </>

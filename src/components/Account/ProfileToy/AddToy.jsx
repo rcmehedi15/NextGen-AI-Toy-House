@@ -27,7 +27,7 @@ const AddToy = () => {
         form.reset();
 
         // send data to the server
-        fetch('http://localhost:5000/addToy', {
+        fetch('http://localhost:5001/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -49,7 +49,7 @@ const AddToy = () => {
     };
 
     return (
-        <div>
+        <>
             <div className="bg-[#F4F3F0] p-4 md:p-24">
                 <h2 className="text-3xl font-extrabold">Add a Toy</h2>
                 <form onSubmit={handleAddToy} >
@@ -146,7 +146,7 @@ const AddToy = () => {
                     <input required type="submit" value="Add Toy" className="btn bg-[#EB455F] text-white border-none" />
                 </form>
             </div>
-        </div>
+        </>
     );
 };
 

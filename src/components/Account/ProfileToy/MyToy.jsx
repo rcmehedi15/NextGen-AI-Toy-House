@@ -2,59 +2,41 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ToyContext } from '../../../ToyProvider/ToyProvider';
 
 import Swal from "sweetalert2";
+import MyToyTable from './MyToyTable';
 
 
 const MyToy = () => {
     const {user} = useContext(ToyContext)
+    
     const [toys, setToy] = useState([])
-    const url = `http://localhost:5000/myToys?email=${user.email}`;
+    // login use show my toy
+    const url = `http://localhost:5001/myToys?email=${user.email}`;
     useEffect(() => {
         fetch(url)
         .then(res => res.json())
         .then(data => setToy(data) )
     },[])
+// delete data
+    const handleDelete = id => {
+        const proceed = confirm('Are You sure you want to delete');
+        if (proceed) {
+            fetch(`http://localhost:5001/myToys/${id}`,{
+                method: 'DELETE',
+                
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful');
+                        const remaining = toys.filter(myToy => myToy._id !== id);
+                        setToy(remaining);
+                    }
+                })
+        }
+    }
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/myToys/${user?.email}`)
-    //         .then((res) => res.json())
-    //         .then((result) => {
-    //             console.log(result);
-    //             setToy(result);
-    //         })
-    // }, [user]);
-
-    // delete data 
-
-    // const handleDelete = _id => {
-    //     console.log(_id);
-    //     Swal.fire({
-    //         title: 'Are you sure?',
-    //         text: "You won't be able to revert this!",
-    //         icon: 'warning',
-    //         showCancelButton: true,
-    //         confirmButtonColor: '#3085d6',
-    //         cancelButtonColor: '#d33',
-    //         confirmButtonText: 'Yes, delete it!'
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-
-    //             fetch(`http://localhost:5000/myToys/${_id}`, {
-    //                 method: 'DELETE'
-    //             })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     if (data.deletedCount > 0) {
-    //                         Swal.fire(
-    //                             'Deleted!',
-    //                             'Your Coffee has been deleted.',
-    //                             'success'
-    //                         )
-    //                     }
-
-    //                 })
-    //         }
-    //     })
-    // }
+   
     return (
         <>
             <hr />
@@ -81,30 +63,17 @@ const MyToy = () => {
                         </thead>
                         <tbody>
                             {
-                                toys?.map((toy, index) => (
-                                    <tr className="bg-gray-100">
-                                        <td>{index + 1}</td>
-                                        <td className="px-4 py-2">
-                                            <img src={toy.photo} alt="" />
-                                        </td>
-                                        <td className="px-4 py-2">{toy.toyName}</td>
-                                        <td className="px-4 py-2">{toy.sellerName}</td>
-                                        <td className="px-4 py-2">{toy.sellerEmail}</td>
-                                        <td className="px-4 py-2">{toy.subCategory}</td>
-                                        <td className="px-4 py-2">{toy.Price}</td>
-                                        <td className="px-4 py-2">{toy.Rating}</td>
-                                        <td className="px-4 py-2">{toy.availableQuantity}</td>
-                                        <td className="px-4 py-2">{toy.detailDescription}</td>
-                                        <td className="px-4 py-2 flex space-x-2">
-                                            <button className="px-2 py-1 bg-green-600 text-white rounded-md">
-                                                Edit
-                                            </button>
-                                            <button className="px-2 py-1 bg-red-500 text-white rounded-md" >
-                                                Delete
-                                            </button>
-                                        </td>
+                                toys?.map((toy, index) =>  ( 
+                                   <MyToyTable 
+                                   key={toy._id} 
+                                   toy={toy} 
+                                   index={index}
+                                   handleDelete={handleDelete}
+                                   
+                                   >
 
-                                    </tr>
+
+                                   </MyToyTable>
                                 ))
                             }
 

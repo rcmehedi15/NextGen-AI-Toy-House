@@ -3,14 +3,17 @@ import { ToyContext } from '../../../ToyProvider/ToyProvider';
 
 import Swal from "sweetalert2";
 import MyToyTable from './MyToyTable';
+import useTitle from '../../../Hook/useTitle';
 
 
 const MyToy = () => {
+    useTitle('My Toy')
+
     const {user} = useContext(ToyContext)
     
     const [toys, setToy] = useState([])
     // login use show my toy
-    const url = `http://localhost:5001/myToys?email=${user.email}`;
+    const url = `https://next-gen-toy-server.vercel.app/myToys?email=${user.email}`;
     useEffect(() => {
         fetch(url)
         .then(res => res.json())
@@ -20,7 +23,7 @@ const MyToy = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
         if (proceed) {
-            fetch(`http://localhost:5001/myToys/${id}`,{
+            fetch(`https://next-gen-toy-server.vercel.app/myToys/${id}`,{
                 method: 'DELETE',
                 
             })

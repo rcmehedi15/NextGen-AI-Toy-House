@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { ToyContext } from '../../../ToyProvider/ToyProvider';
+import useTitle from '../../../Hook/useTitle';
 
 const AddToy = () => {
+    useTitle('Add a Toy')
+
     const {user} = useContext(ToyContext)
     const handleAddToy = (event) => {
         event.preventDefault();
@@ -27,7 +30,7 @@ const AddToy = () => {
         form.reset();
 
         // send data to the server
-        fetch('http://localhost:5001/addToy', {
+        fetch('https://next-gen-toy-server.vercel.app/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

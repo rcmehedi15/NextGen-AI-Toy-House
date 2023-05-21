@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import { ToyContext } from '../../ToyProvider/ToyProvider';
+import useTitle from '../../Hook/useTitle';
 
 const Account = () => {
     const { user } = useContext(ToyContext);
+    useTitle('Profile')
+
     return (
         <div className='py-10 w-8/12 mx-auto flex flex-col justify-center items-center '>
 

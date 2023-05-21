@@ -1,6 +1,9 @@
 import React from 'react';
+import useTitle from '../../Hook/useTitle';
 
 const Contact = () => {
+    useTitle('Contact Us')
+
     return (
         <>
             <section className="container mx-auto md:flex-row p-2 md:p-10 md:mt-5 bg-base-200 ">

@@ -3,9 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { updateProfile } from 'firebase/auth';
 import { ToyContext } from '../../ToyProvider/ToyProvider';
+import useTitle from '../../Hook/useTitle';
 
 
 const Register = () => {
+    useTitle('Register')
+    
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../../Hook/useTitle";
 
 
 const EditToy = () => {
+    useTitle('Edit Toy')
     const Toy = useLoaderData();
     const { _id, Price, availableQuantity, detailDescription } = Toy;
     console.log(Toy);
     //    const [toy,setToy] = useState()
     const handleEditToy = event => {
+        
+
         event.preventDefault();
         const form = event.target;
 
@@ -18,7 +22,7 @@ const EditToy = () => {
         const editedToy = { Price, availableQuantity, detailDescription }
         console.log(editedToy);
 
-        fetch(`http://localhost:5001/toys/${_id}`, {
+        fetch(`https://next-gen-toy-server.vercel.app/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

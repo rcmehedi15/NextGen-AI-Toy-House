@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToyContext } from '../../ToyProvider/ToyProvider';
+import useTitle from '../../Hook/useTitle';
 
 const Login = () => {
+    
     const {googleLogIn,user, login, gitHubLogin} = useContext(ToyContext);
-
+    useTitle('Login')
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";

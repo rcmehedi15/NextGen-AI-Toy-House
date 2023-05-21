@@ -1,8 +1,11 @@
 import React from "react";
 import { useNavigation } from "react-router-dom";
 import './Blog.css'
+import useTitle from "../../Hook/useTitle";
 
 const Blog = () => {
+    useTitle('Blog')
+
     const ref = React.createRef();
     const options = {
         orientation: "landscape",

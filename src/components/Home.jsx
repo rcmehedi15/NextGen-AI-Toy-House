@@ -10,32 +10,35 @@ import Catagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import AllToyCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import ShopByCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import AosAnimation from './Aos/AosAnimation';
+import useTitle from '../Hook/useTitle';
 
 const Home = () => {
+    useTitle('Home')
+
     const jobs = useLoaderData();
 
 
     return (
         <>
-            {/* <section>
-               <Banner></Banner>
+            <section>
+                <Banner></Banner>
                 <Gallery></Gallery>
-                
-           
+                <ShopByCatagory></ShopByCatagory>
+
+
 
                 <section>
 
                     <Why></Why>
                     <Testimonial></Testimonial>
+                    <AosAnimation></AosAnimation>
                     <Contact></Contact>
                     <Faq></Faq>
                 </section>
 
-            </section> */}
-            <ShopByCatagory></ShopByCatagory>
-            <AosAnimation></AosAnimation>
-          
-            
+            </section>
+
+
         </>
     );
 };

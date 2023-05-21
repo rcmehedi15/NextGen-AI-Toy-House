@@ -1,19 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ToyCard = ({ Toy, index }) => {
-    const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = Toy;
-    // console.log(Toy);
+const ShopByTable = ({ singleToy ,index}) => {
+    const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = singleToy;
+    console.log(singleToy,index);
 
     return (
         <>
-
-
-
-            {/* row 1 */}
             <tr>
                 <th>
-                    {index + 1}
+                    {index+1}
                 </th>
                 <td>
                     <div className="flex items-center space-x-3">
@@ -44,10 +40,8 @@ const ToyCard = ({ Toy, index }) => {
 
                 </th>
             </tr>
-
-
         </>
     );
 };
 
-export default ToyCard;
+export default ShopByTable;

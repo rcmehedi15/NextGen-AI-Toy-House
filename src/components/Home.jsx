@@ -8,6 +8,7 @@ import Faq from './Faq/Faq';
 import Gallery from './Gallery/Gallery';
 import Catagory from './Catagory/ShopByCatagory/ShopByCatagory';
 import AllToyCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
+import ShopByCatagory from './Catagory/ShopByCatagory/ShopByCatagory';
 const Home = () => {
     const jobs = useLoaderData();
 
@@ -29,6 +30,7 @@ const Home = () => {
                 </section>
 
             </section> */}
+            <ShopByCatagory></ShopByCatagory>
             
         </>
     );

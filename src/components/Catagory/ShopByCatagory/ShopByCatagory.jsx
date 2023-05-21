@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ShopByTable from './ShopByTable';
 
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
@@ -50,7 +51,7 @@ const ShopByCatagory = () => {
                             Search
                         </button>
                     </div>
-                    <div className="text-center w-full mx-auto">
+                    <div className="text-center w-full mx-auto my-4">
                         <div className="tabs flex justify-center items-center">
                             <div
                                 onClick={() => handleTabClick("All Toys")}
@@ -99,19 +100,21 @@ const ShopByCatagory = () => {
                                     <th>Seller Details</th>
                                     <th>Price</th>
                                     <th>Available Quantity</th>
+                                    <th>Details</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 {/* row 1 */}
 
-                                {/* {
-                                    Alltoy.map((singleToy) => (
-                                        <AllToyCard singleToy={singleToy} key={singleToy._id}></AllToyCard>
+                                {
+                                    Alltoy?.map((singleToy,index) => (
+                                        <ShopByTable index={index} singleToy={singleToy} key={singleToy._id}></ShopByTable>
                                     ))
-                                } */}
+                                }
                             </tbody>
                             {/* foot */}
-                            
+
 
                         </table>
                     </div>

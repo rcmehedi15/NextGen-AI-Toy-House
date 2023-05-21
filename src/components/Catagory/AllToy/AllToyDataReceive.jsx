@@ -40,8 +40,8 @@ const AllToyDataReceive = () => {
                         <tbody>
 
                             {
-                                allToy.map((Toy) => (
-                                    <ToyCard Toy={Toy} key={Toy._id}></ToyCard>
+                                allToy?.map((Toy,index) => (
+                                    <ToyCard index={index} Toy={Toy} key={Toy._id}></ToyCard>
                                 ))
                             }
 

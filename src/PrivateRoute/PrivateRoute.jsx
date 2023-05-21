@@ -14,7 +14,10 @@ const PrivateRoute = ({ children }) => {
     if (user) {
         return children;
     }
-    return <Navigate to="/login" state={{ from: location }} replace></Navigate>
+    else{
+        alert("You have to log in first to view details")
+        return <Navigate to="/login" state={{ from: location }} replace></Navigate>
+    }
 };
 
 export default PrivateRoute;

@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: '/alltoyCard',
         element: <AllToyDataReceive></AllToyDataReceive>,
-        // loader: () => fetch(`https://next-gen-toy-server.vercel.app/toys`)
+        // loader: () => fetch(`http://localhost:5001/toys`)
       },
       {
         path: '/blog',
@@ -69,12 +69,12 @@ const router = createBrowserRouter([
       {
         path: 'EditToy/:id',
         element: <PrivateRoute><EditToy></EditToy></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://next-gen-toy-server.vercel.app/toys/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5001/toys/${params.id}`)
       },
       {
         path: 'toysDetails/:toyId',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://next-gen-toy-server.vercel.app/toys/${params.toyId}`)
+        loader: ({ params }) => fetch(`http://localhost:5001/toys/${params.toyId}`)
       },
       {
         path: "*",

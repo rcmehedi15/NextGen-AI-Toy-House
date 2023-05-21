@@ -19,7 +19,7 @@ const AddToy = () => {
 
         const photo = form.photo.value;
         const subCategory = form.subCategory.value;
-        const Price = form.Price.value;
+        const Price = parseInt(form.Price.value)
         const Rating = form.Rating.value;
         const availableQuantity = form.availableQuantity.value;
         const detailDescription = form.detailDescription.value;
@@ -30,7 +30,7 @@ const AddToy = () => {
         form.reset();
 
         // send data to the server
-        fetch('https://next-gen-toy-server.vercel.app/addToy', {
+        fetch('http://localhost:5001/addToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

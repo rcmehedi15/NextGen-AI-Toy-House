@@ -16,13 +16,13 @@ const EditToy = () => {
         event.preventDefault();
         const form = event.target;
 
-        const Price = form.Price.value;
+        const Price = parseInt(form.Price.value)
         const availableQuantity = form.availableQuantity.value;
         const detailDescription = form.detailDescription.value;
         const editedToy = { Price, availableQuantity, detailDescription }
         console.log(editedToy);
 
-        fetch(`https://next-gen-toy-server.vercel.app/toys/${_id}`, {
+        fetch(`http://localhost:5001/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

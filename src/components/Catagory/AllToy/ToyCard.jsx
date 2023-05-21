@@ -24,7 +24,8 @@ const ToyCard = ({ Toy, index }) => {
                         </div>
                         <div>
                             <div className="font-bold">{toyName}</div>
-                            <div className="text-sm opacity-50">{subCategory}</div>
+                            <div  > <span className="text-sm opacity-80 badge border-none badge-md">Catagory :</span> <span>{subCategory}</span></div>
+
                         </div>
                     </div>
                 </td>

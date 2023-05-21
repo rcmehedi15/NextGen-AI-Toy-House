@@ -58,7 +58,7 @@ const MyToy = () => {
 
                 <div className=' gap-2  flex items-center justify-center '>
                     <button onClick={() => handleAsc()} className="btn btn-error">Acending</button>
-                    <button onClick={() => handleDac()} className="btn btn-outline btn-success">Descendingec</button>
+                    <button onClick={() => handleDac()} className="btn btn-outline btn-success">Descending</button>
                 </div>
                 <div className="p-4 overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">

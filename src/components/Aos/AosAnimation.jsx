@@ -17,8 +17,8 @@ const AosAnimation = () => {
 
         
             <div className="  flex flex-col items-center justify-center ">
-                <h2 className="text-center text-3xl font-bold text-[#243E63]">Our Features
-                    <span className="bg-[#EB455F] text-white shape m-2">Toy Category</span>
+                <h2 className="text-center text-3xl font-bold text-[#243E63]">Our
+                    <span className="bg-[#EB455F] text-white shape m-2">Toy Category AOS </span>
                 </h2>
 
                 <div className="text-white bg-purple-700 p-2 m-5 w-36 h-32 rounded-md flex items-center justify-center" data-aos="flip-left">

@@ -15,7 +15,7 @@ const ShopByTable = ({ singleToy, index }) => {
                     <h2 className="card-title">{toyName.slice(0,20)}</h2>
                     <p>{subCategory}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/toyDetails/${_id}`} className="btn btn-outline hover:bg-[#332FD0] mt-4">View Details</Link>
+                        <Link to={`/toysDetails/${_id}`} className="btn btn-outline hover:bg-[#332FD0] mt-4">View Details</Link>
                     </div>
                 </div>
             </div>

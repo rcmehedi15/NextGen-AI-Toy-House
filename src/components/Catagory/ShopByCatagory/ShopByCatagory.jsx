@@ -30,7 +30,7 @@ const ShopByCatagory = () => {
     return (
         <>
 
-            <div className='container mx-auto'>
+            <div className='container mx-auto '>
                 <h2 className="text-center text-4xl font-bold text-[#243E63] ">Shop by
                     <span className="bg-[#EB455F] text-white shape m-5 "> Category</span></h2>
                 <div className="tab-container text-center">
@@ -70,38 +70,12 @@ const ShopByCatagory = () => {
                 </div>
                 <div >
 
-
-
-
-
-                    <div className="overflow-x-auto w-full">
-                        <table className="table w-full">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Picture </th>     
-                                    <th>Toy Name </th>     
-                                    <th>Rating</th>
-                                    <th>Price</th>
-                                    <th>Details</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-
-                                {
-                                    Alltoy?.map((singleToy, index) => (
-                                        <ShopByTable index={index} singleToy={singleToy} key={singleToy._id}></ShopByTable>
-                                    ))
-                                }
-                            </tbody>
-                            {/* foot */}
-
-
-                        </table>
+                    <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
+                        {Alltoy.map((singleToy, index) => (
+                            <ShopByTable index={index} singleToy={singleToy} key={singleToy._id} />
+                        ))}
                     </div>
+
 
 
                 </div>

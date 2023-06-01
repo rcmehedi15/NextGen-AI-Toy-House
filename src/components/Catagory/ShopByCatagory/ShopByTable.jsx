@@ -4,38 +4,21 @@ import { Link } from 'react-router-dom';
 const ShopByTable = ({ singleToy, index }) => {
     const { _id, photo, toyName, sellerName, sellerEmail, subCategory, Price, Rating, availableQuantity, detailDescription } = singleToy;
     // console.log(singleToy,index);
+    
 
     return (
         <>
-            <tr>
-                <th>
-                    {index + 1}
-                </th>
-                <td>
-                    <div className="flex items-center space-x-3">
-                        <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                                <img src={photo} alt="Avatar Tailwind CSS Component" />
-                            </div>
-                        </div>
-
+            <div className=" card w-96 bg-base-100 shadow-xl">
+                <img src={photo}  className='h-64 ' />
+                <p className="absolute  mr-4 mt-4 px-4 bg-[#393950] text-white">${Price}</p>
+                <div className="card-body flex flex-col items-center">
+                    <h2 className="card-title">{toyName.slice(0,20)}</h2>
+                    <p>{subCategory}</p>
+                    <div className="card-actions justify-end">
+                        <Link to={`/toyDetails/${_id}`} className="btn btn-outline hover:bg-[#332FD0] mt-4">View Details</Link>
                     </div>
-                </td>
-                <td>
-                    <div className="font-bold">{toyName}</div>
-                </td>
-
-                <td>
-                    {Rating} Star
-                </td>
-                <td>${Price}</td>
-
-                <th>
-                    <Link to={`/toysDetails/${_id}`} className="btn btn-ghost btn-xs badge border-none bg-[#EB455F] badge-md text-white">Details</Link>
-
-
-                </th>
-            </tr>
+                </div>
+            </div>
         </>
     );
 };
